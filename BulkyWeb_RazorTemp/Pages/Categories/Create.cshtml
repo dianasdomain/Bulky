@@ -1,0 +1,30 @@
+﻿@page
+@model BulkyWeb_RazorTemp.Pages.Categories.CreateModel
+
+<form method="POST">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2> Create category </h2>
+            <hr/>
+        </div>
+        <div class="row mb-3 p-1">
+            <label asp-for="Category.Name" class="p-0"> Category name </label>
+            <input asp-for="Category.Name" type="text" class="form-control"/>
+            <span asp-validation-for="Category.Name" class="text-danger p-0"></span>
+        </div>
+        <div class="row mb-3 p-1">
+            <label asp-for="Category.DisplayOrder" class="p-0"> Display order </label>
+            <input asp-for="Category.DisplayOrder" type="text" class="form-control" />
+            <span asp-validation-for="Category.DisplayOrder" class="text-danger p-0"></span>
+        </div>
+        <button type="submit" class="btn btn-primary"> Create </button>
+        <a asp-page="/categories/index" class="btn btn-secondary"> Back to list </a>
+    </div>
+</form>
+
+@* //for client side validation *@
+@section Scripts{
+    @{
+    <partial name="_ValidationScriptsPartial"/> //to consume a partial view
+    }
+}
